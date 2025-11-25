@@ -5,92 +5,102 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Mega Menu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="mega-menu">
-    <ul>
-        <li>
-            <a class="menu-title" href="#">Home</a>
-        </li>
+<header class="site-header">
+    <div class="brand">MegaMenu</div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <nav class="mega-menu" id="primary-navigation" aria-label="Primary">
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a class="menu-title" href="#">Home</a>
+            </li>
 
-        <li class="has-submenu">
-            <a class="menu-title" href="#">Products</a>
-            <div class="submenu-container">
-                <div class="submenu">
-                    <div class="col-3">
-                        <div class="submenu-column">
-                            <h4>Laptops</h4>
-                            <ul>
-                                <li><a href="#">Macbook Pro</a></li>
-                                <li><a href="#">Macbook Air</a></li>
-                                <li><a href="#">iMac</a></li>
-                            </ul>
-                        </div>
+            <li class="menu-item has-submenu">
+                <button class="menu-title" type="button" aria-expanded="false">Products</button>
+                <div class="submenu-container">
+                    <div class="submenu">
+                        <div class="col-3">
+                            <div class="submenu-column">
+                                <h4>Laptops</h4>
+                                <ul>
+                                    <li><a href="#">Macbook Pro</a></li>
+                                    <li><a href="#">Macbook Air</a></li>
+                                    <li><a href="#">iMac</a></li>
+                                </ul>
+                            </div>
 
-                        <div class="submenu-column">
-                            <h4>Phones</h4>
-                            <ul>
-                                <li><a href="#">iPhone</a></li>
-                                <li><a href="#">Samsung</a></li>
-                                <li><a href="#">Huawei</a></li>
-                            </ul>
-                        </div>
+                            <div class="submenu-column">
+                                <h4>Phones</h4>
+                                <ul>
+                                    <li><a href="#">iPhone</a></li>
+                                    <li><a href="#">Samsung Galaxy</a></li>
+                                    <li><a href="#">Google Pixel</a></li>
+                                </ul>
+                            </div>
 
-                        <div class="submenu-column">
-                            <h4>Monitors</h4>
-                            <ul>
-                                <li><a href="#">LG</a></li>
-                                <li><a href="#">Samsung</a></li>
-                                <li><a href="#">Dell</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-
-        <li class="has-submenu">
-            <a class="menu-title">Services</a>
-            <div class="submenu-container">
-                <div class="submenu">
-                    <div class="col-3">
-                        <div class="submenu-column">
-                            <h4>Repair</h4>
-                            <ul>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Phones</a></li>
-                                <li><a href="#">Monitors</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="submenu-column">
-                            <h4>Clean</h4>
-                            <ul>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Phones</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="submenu-column">
-                            <h4>Exchange for used</h4>
-                            <ul>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Phones</a></li>
-                                <li><a href="#">Monitors</a></li>
-                            </ul>
+                            <div class="submenu-column">
+                                <h4>Monitors</h4>
+                                <ul>
+                                    <li><a href="#">LG</a></li>
+                                    <li><a href="#">Samsung</a></li>
+                                    <li><a href="#">Dell</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </li>
+            </li>
+            <li class="menu-item has-submenu">
+                <button class="menu-title" type="button" aria-expanded="false">Services</button>
+                <div class="submenu-container">
+                    <div class="submenu">
+                        <div class="col-3">
+                            <div class="submenu-column">
+                                <h4>Repair</h4>
+                                <ul>
+                                    <li><a href="#">Laptops</a></li>
+                                    <li><a href="#">Phones</a></li>
+                                    <li><a href="#">Monitors</a></li>
+                                </ul>
+                            </div>
+                            <div class="submenu-column">
+                                <h4>Clean</h4>
+                                <ul>
+                                    <li><a href="#">Laptops</a></li>
+                                    <li><a href="#">Phones</a></li>
+                                </ul>
+                            </div>
+                            <div class="submenu-column">
+                                <h4>Exchange for used</h4>
+                                <ul>
+                                    <li><a href="#">Laptops</a></li>
+                                    <li><a href="#">Phones</a></li>
+                                    <li><a href="#">Monitors</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
 
-    </ul>
-
-</nav>
-
+            <li class="menu-item">
+                <a class="menu-title" href="#">About</a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-title" href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <div class="content">
     <h2>Heading 1</h2>
     <p>

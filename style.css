@@ -1,5 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8f9fd;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.site-header {
+    background: linear-gradient(135deg, midnightblue, darkblue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    margin: 4px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mega-menu {
+    position: relative;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu-title:hover,
+.menu-title:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+
+.submenu-container {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: min(900px, 90vw);
+    display: none;
+    padding-top: 0.75rem;
+}
+
+.submenu {
+    background: white;
+    color: midnightblue;
+    border-radius: 0.9rem;
+    box-shadow: 0 20px 40px rgba(11, 30, 66, 0.16);
+    padding: 1.5rem;
+    border: 1px solid rgba(10, 31, 68, 0.08);
+}
+
+.col-3 {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.submenu-column h4 {
+    font-size: 1rem;
+    color: midnightblue;
+    margin-bottom: 0.5rem;
+}
+
+.submenu-column ul {
+    list-style: none;
+    display: grid;
+    gap: 0.35rem;
+}
+
+.has-submenu:hover > .submenu-container,
+.has-submenu:focus-within > .submenu-container {
+    display: block;
+}
+
 .content {
     line-height: 2;
     max-width: 600px;
-    margin-inline: auto;
+    margin: 3rem auto;
+    padding: 0 1.25rem;
+    color: midnightblue;
+}
+
+.content h2 {
+    color: midnightblue;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.content p {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .mega-menu {
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        max-height: 0;
+    }
+
+    .mega-menu.is-open {
+        max-height: 1200px;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 0;
+        gap: 0.25rem;
+    }
+
+    .menu-title {
+        color: midnightblue;
+        justify-content: space-between;
+        width: 100%;
+        background: lightgrey;
+        border-radius: 0.6rem;
+    }
+
+    .menu-item.has-submenu .menu-title::after {
+        content: '\25be';
+        font-size: 0.85rem;
+        color: gray;
+        transition: transform 0.2s ease;
+    }
+
+    .menu-item.has-submenu.submenu-open .menu-title::after {
+        transform: rotate(-180deg);
+    }
+
+    .submenu-container {
+        position: static;
+        width: 100%;
+        padding-top: 0;
+        display: none;
+    }
+
+    .submenu {
+        margin-top: 0.4rem;
+        border-radius: 0.7rem;
+    }
+
+    .col-3 {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .menu-item.has-submenu.submenu-open > .submenu-container {
+        display: block;
+    }
 }
